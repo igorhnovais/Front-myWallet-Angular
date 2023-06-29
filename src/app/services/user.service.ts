@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environments';
 export class UserService {
   private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}/auth/sign-in`;
+  private response!: string;
 
 
   constructor(private http: HttpClient) { }
