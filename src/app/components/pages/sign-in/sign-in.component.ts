@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit{
-
+  private response!: string;
   constructor(
     private userService: UserService,
     private router: Router
@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit{
     
   ngOnInit(): void {}
 
-  async newLogin(signIn: SignIn){
+  async newLogin(signIn: SignIn){ 
     await this.userService.newLogin(signIn).subscribe();
     this.router.navigate(["/home"]);
   }
