@@ -14,6 +14,7 @@ import { NewEntryComponent } from './components/pages/new-entry/new-entry.compon
 import { NewExitComponent } from './components/pages/new-exit/new-exit.component';
 import { SignUpComponent } from './components/pages/sign-up/sign-up.component';
 import { MoveComponent } from './components/pages/move/move.component';
+import { EditMoveComponent } from './components/page/edit-move/edit-move.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MoveComponent } from './components/pages/move/move.component';
     NewEntryComponent,
     NewExitComponent,
     SignUpComponent,
-    MoveComponent
+    MoveComponent,
+    EditMoveComponent
   ],
   imports: [
     BrowserModule,

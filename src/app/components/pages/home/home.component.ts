@@ -4,6 +4,7 @@ import { Transaction } from 'src/app/Transaction';
 import { environment } from 'src/environments/environments';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.transactionService.getAllTransactions()
     .subscribe({next: (res) => {this.transactions = res, this.allTransactions = res}
       
-      , error: (res) => console.log(res)})
+      , error: (res) => console.log("error", res)})
 
     // this.transactionService.getAllTransactions()
     // .subscribe((items) => {

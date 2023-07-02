@@ -1,1 +1,13 @@
-<p>move works!</p>
+<div *ngIf="transaction">
+    <h1>{{transaction.price}}</h1>
+    <p>{{transaction.created}}</p>
+</div>
+<div>
+    <button (click)="removeHandler(transaction.id)">
+        <fa-icon [icon]="faTimes" ></fa-icon> excluir
+    </button>
+    <fa-icon [icon]="faEdit"></fa-icon> editar
+    
+</div>
+
+

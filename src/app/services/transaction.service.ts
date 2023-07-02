@@ -20,4 +20,13 @@ export class TransactionService {
   return this.http.get<Transaction[]>(this.apiUrl)
   }
 
+  getTransaction(id:number):Observable<Transaction>{
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<Transaction>(url)
+  }
+
+  removeTransaction(id:number){
+    const url = `${this.apiUrl}/${id}`
+    return this.http.delete(url)
+  }
 }
