@@ -6,7 +6,10 @@
     <button (click)="removeHandler(transaction.id)">
         <fa-icon [icon]="faTimes" ></fa-icon> excluir
     </button>
-    <fa-icon [icon]="faEdit"></fa-icon> editar
+    <button routerLink="/home/edit/{{transaction.id}}">
+        <fa-icon [icon]="faEdit"></fa-icon> editar
+    </button>
+    
     
 </div>
 

@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environments';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Response } from '../Response';
 import { Transaction } from '../Transaction';
+import { Edit } from '../Edit';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,10 @@ export class TransactionService {
   removeTransaction(id:number){
     const url = `${this.apiUrl}/${id}`
     return this.http.delete(url)
+  }
+
+  editTransaction(id: number, edit: Edit): Observable<Edit>{
+    const url = `${this.apiUrl}/${id}`
+    return this.http.put<Edit>(url, edit);
   }
 }

@@ -6,6 +6,9 @@ import { NewEntryComponent } from './components/pages/new-entry/new-entry.compon
 import { NewExitComponent } from './components/pages/new-exit/new-exit.component';
 import { SignUpComponent } from './components/pages/sign-up/sign-up.component';
 import { MoveComponent } from './components/pages/move/move.component';
+import { EditMoveComponent } from './components/pages/edit-move/edit-move.component';
+
+
 
 
 const routes: Routes = [
@@ -14,6 +17,7 @@ const routes: Routes = [
   {path:"home", component: HomeComponent},
   {path:"new-entry", component: NewEntryComponent},
   {path:"new-exit", component: NewExitComponent},
+  {path:"home/edit/:id", component: EditMoveComponent},
   {path:"home/:id", component: MoveComponent}
 ];
 
