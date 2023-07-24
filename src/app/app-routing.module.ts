@@ -12,6 +12,7 @@ import { EditMoveComponent } from './components/pages/edit-move/edit-move.compon
 
 
 const routes: Routes = [
+  {path:"", redirectTo: "home", pathMatch: "full"},
   {path:"sign-in", component: SignInComponent},
   {path:"sign-up", component: SignUpComponent},
   {path:"home", component: HomeComponent},
