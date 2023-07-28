@@ -1,0 +1,11 @@
+.button {
+    & h1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        font-family: Raleway;
+        font-weight: 700;
+        font-size: 40px;
+        color: white;
+    }
+}

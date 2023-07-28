@@ -1,12 +1,11 @@
 <form (ngSubmit)="submit()" [formGroup]="newTransactionForm" #formDir="ngForm">
-    <div>
-        <div>
-            <label for="price">Valor</label>
+    <div class="nav">
+        <div class="entry">
             <input type="number" 
             placeholder="Digite o novo valor"
             formControlName="price"
             />
         </div>
-        <input type="submit"/>
+        <input type="submit" class="button"/>
     </div>
 </form>
