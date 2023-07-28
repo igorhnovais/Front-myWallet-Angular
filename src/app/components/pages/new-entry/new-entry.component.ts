@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Transaction } from 'src/app/Transaction';
 import { NewTransaction } from 'src/app/newTransaction';
 import { TransactionService } from 'src/app/services/transaction.service';
