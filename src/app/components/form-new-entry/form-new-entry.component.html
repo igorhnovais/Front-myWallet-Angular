@@ -1,1 +1,12 @@
-<p>form-new-entry works!</p>
+<form (ngSubmit)="submit()" [formGroup]="newTransactionForm" #formDir="ngForm">
+    <div>
+        <div>
+            <label for="price">Valor</label>
+            <input type="number" 
+            placeholder="Digite o novo valor"
+            formControlName="price"
+            />
+        </div>
+        <input type="submit"/>
+    </div>
+</form>

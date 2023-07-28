@@ -1,7 +1,8 @@
 <div *ngIf="transaction">
     <h2> o preço pra editar é {{transaction.price}}</h2>
     <app-form-edit 
-    (onSubmit)="newEdit($event)"
-    [editData]="transaction" 
-    [btnText]="btnText"></app-form-edit>
+        (onSubmit)="newEdit($event)"
+        [editData]="transaction" 
+        [btnText]="btnText">
+    </app-form-edit>
 </div>
