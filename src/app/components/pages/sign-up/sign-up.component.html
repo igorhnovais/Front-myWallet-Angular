@@ -1,1 +1,5 @@
-<p>sign-up works!</p>
+<main class="d-flex flex-column align-items-center justify-content-center">
+    <h1 class=" m-5">MyWallet</h1>
+    <app-form-sign-up (onSubmit)="newSignUp($event)"></app-form-sign-up>
+    <h6 routerLink="/sign-in" class="mt-5">Já possui conta? Entre!</h6>
+</main>

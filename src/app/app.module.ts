@@ -18,6 +18,7 @@ import { EditMoveComponent } from './components/pages/edit-move/edit-move.compon
 import { FormEditComponent } from './components/form-edit/form-edit.component';
 import { FormNewEntryComponent } from './components/form-new-entry/form-new-entry.component';
 import { FormNewExitComponent } from './components/form-new-exit/form-new-exit.component';
+import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormNewExitComponent } from './components/form-new-exit/form-new-exit.c
     FormEditComponent,
     FormNewEntryComponent,
     FormNewExitComponent,
+    FormSignUpComponent,
   ],
   imports: [
     BrowserModule,
