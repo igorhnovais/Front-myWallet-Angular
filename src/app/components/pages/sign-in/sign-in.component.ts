@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit{
   private response!: string;
+  private user = '';
+
   constructor(
     private userService: UserService,
     private router: Router
@@ -18,7 +20,16 @@ export class SignInComponent implements OnInit{
   ngOnInit(): void {}
 
   async newLogin(signIn: SignIn){ 
-    await this.userService.newLogin(signIn).subscribe();
-    this.router.navigate(["/home"]);
+    await this.userService.newLogin(signIn)
+    .subscribe({
+      next: (res) => {
+        this.user = JSON.stringify(res),
+        localStorage.setItem("token", this.user);
+        this.router.navigate(["/home"]);
+      },
+      error: (res) => {
+        console.log("error", res.error)
+      }
+    });
   }
 }
