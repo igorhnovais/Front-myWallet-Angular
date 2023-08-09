@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environments';
@@ -18,8 +18,12 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  getAllTransactions():Observable<Transaction[]>{
-  return this.http.get<Transaction[]>(this.apiUrl)
+  getAllTransactions(token: string):Observable<Transaction[]>{
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
+    return this.http.get<Transaction[]>(this.apiUrl, {headers})
   }
 
   getTransaction(id:number):Observable<Transaction>{

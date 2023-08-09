@@ -3,6 +3,7 @@ import { TransactionService } from 'src/app/services/transaction.service';
 import { Transaction } from 'src/app/Transaction';
 import { environment } from 'src/environments/environments';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,28 +18,29 @@ export class HomeComponent implements OnInit {
   faSearch = faSearch;
   searchTerm: string = "";
 
-  constructor(private transactionService: TransactionService){}
+
+  constructor(
+    private transactionService: TransactionService,
+    private router: Router
+    ){}
 
   ngOnInit(): void {
+    const respStorage: string | null = localStorage.getItem("token")
+    let token = null
+    if(respStorage){
+      const obj = JSON.parse(respStorage)
+      token = obj.token
+    }
 
-    this.transactionService.getAllTransactions()
+    if(!token){
+      this.router.navigate(["/sign-in"]);
+    }
+
+    this.transactionService.getAllTransactions(token)
     .subscribe({next: (res) => {this.transactions = res, this.allTransactions = res}
       
       , error: (res) => console.log("error", res)})
 
-    // this.transactionService.getAllTransactions()
-    // .subscribe((items) => {
-      
-    //   const data = items.data
-    //   data.map((item) => {
-    //     item.created = new Date(item.created!).toLocaleDateString("pt-BR");
-
-    //     this.allTransactions = data;
-    //     this.transactions = data;
-
-    //     console.log("feli", items)
-    //   })
-    // });
   }
 
   search(e: Event): void{
