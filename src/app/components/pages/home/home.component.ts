@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.transactionService.getAllTransactions(token)
-    .subscribe({next: (res) => {this.transactions = res, this.allTransactions = res}
+    .subscribe({next: (res) => {this.transactions = res, console.log("p", res),this.allTransactions = res}
       
       , error: (res) => console.log("error", res)})
 
@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit {
   search(e: Event): void{
     const target = e.target as HTMLInputElement;
     const value = Number(target.value);
-    console.log(value)
 
     this.transactions = this.allTransactions.filter((transaction) => {
       return transaction.price == value
     });
+
   }
 }
 
