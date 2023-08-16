@@ -41,13 +41,21 @@ export class TransactionService {
     return this.http.put<Edit>(url, edit);
   }
 
-  postNewTransaction(newTransaction: NewTransaction): Observable<NewTransaction>{
+  postNewTransaction(token: string, newTransaction: NewTransaction): Observable<NewTransaction>{
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
     const url = `${this.apiUrl}/new-entry`
-    return this.http.post<NewTransaction>(url, newTransaction);
+    return this.http.post<NewTransaction>(url, newTransaction, {headers});
   }
 
-  postNewTransactionExit(newTransaction: NewTransaction): Observable<NewTransaction>{
+  postNewTransactionExit(token:string, newTransaction: NewTransaction): Observable<NewTransaction>{
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
     const url = `${this.apiUrl}/new-exit`
-    return this.http.post<NewTransaction>(url, newTransaction);
+    return this.http.post<NewTransaction>(url, newTransaction, {headers});
   }
 }
