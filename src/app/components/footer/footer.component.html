@@ -1,6 +1,11 @@
 <div class="footer">
     <h6>MyWallet</h6>
-    <fa-icon [icon]="faBars" (click)="toggleMenu()"></fa-icon>
+    <fa-icon [icon]="faBars" id="open-action-sheet"></fa-icon>
 </div>
+<ion-action-sheet
+  trigger="open-action-sheet"
+  class="my-custom-class"
+  [buttons]="actionSheetButtons"
+></ion-action-sheet>
 
 

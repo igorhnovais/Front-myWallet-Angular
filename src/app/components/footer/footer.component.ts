@@ -12,41 +12,34 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent {
   faBars = faBars;
 
+  public actionSheetButtons = [
+    {
+      text: 'Nova Entrada',
+      handler: () => {
+        this.router.navigate(['/new-entry'])
+      },
+    },
+    {
+      text: 'Nova Saída',
+      handler: () => {
+        this.router.navigate(['/new-exit'])
+      },
+    },
+    {
+      text: 'Todas as Movimentações',
+      handler: () => {
+        console.log('Clicou em Todas as Movimentações');
+        // Adicione aqui o código a ser executado ao clicar em Todas as Movimentações
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+    }
+  ]
+
   constructor(
     public actionSheetController: ActionSheetController,
     private router: Router
   ) {}
-
-  async toggleMenu() {
-    const actionSheet = await this.actionSheetController.create({
-      buttons: [
-        {
-          text: 'Nova Entrada',
-          handler: () => {
-            this.router.navigate(['/new-entry'])
-          },
-        },
-        {
-          text: 'Nova Saída',
-          handler: () => {
-            this.router.navigate(['/new-exit'])
-          },
-        },
-        {
-          text: 'Todas as Movimentações',
-          handler: () => {
-            console.log('Clicou em Todas as Movimentações');
-            // Adicione aqui o código a ser executado ao clicar em Todas as Movimentações
-          },
-        },
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'action-sheet-cancel-button'
-        },
-      ],
-    });
-
-    await actionSheet.present();
-  }
 }
