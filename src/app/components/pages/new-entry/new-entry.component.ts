@@ -25,7 +25,7 @@ export class NewEntryComponent implements OnInit {
       this.token = obj.token
     }
 
-    if(!this.token){
+    if(!this.token || undefined){
       this.router.navigate(["/sign-in"]);
     }
   }

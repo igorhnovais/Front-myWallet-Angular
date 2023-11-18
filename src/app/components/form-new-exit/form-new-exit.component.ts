@@ -16,12 +16,17 @@ export class FormNewExitComponent {
 
   ngOnInit(): void {
     this.newTransactionForm = new FormGroup({
-      price: new FormControl("", [Validators.required])
+      price: new FormControl("", [Validators.required]),
+      description: new FormControl("", [Validators.required])
     })
   }
 
   get price(){
     return this.newTransactionForm.get("price")!;
+  }
+
+  get description(){
+    return this.newTransactionForm.get("description")!;
   }
 
   submit(){

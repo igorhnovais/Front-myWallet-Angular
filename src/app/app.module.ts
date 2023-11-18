@@ -19,6 +19,8 @@ import { FormEditComponent } from './components/form-edit/form-edit.component';
 import { FormNewEntryComponent } from './components/form-new-entry/form-new-entry.component';
 import { FormNewExitComponent } from './components/form-new-exit/form-new-exit.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
     FormNewEntryComponent,
     FormNewExitComponent,
     FormSignUpComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

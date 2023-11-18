@@ -16,7 +16,8 @@ export class FormNewEntryComponent implements OnInit{
 
   ngOnInit(): void {
     this.newTransactionForm = new FormGroup({
-      price: new FormControl("", [Validators.required])
+      price: new FormControl("", [Validators.required]),
+      description: new FormControl("", [Validators.required])
     })
   }
 
@@ -24,11 +25,14 @@ export class FormNewEntryComponent implements OnInit{
     return this.newTransactionForm.get("price")!;
   }
 
+  get description(){
+    return this.newTransactionForm.get("description")!;
+  }
+
   submit(){
     if(this.newTransactionForm.invalid){
       return;
     }
-
     this.onSubmit.emit(this.newTransactionForm.value);
   }
 }

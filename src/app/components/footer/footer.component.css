@@ -1,0 +1,33 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    & h6 {
+        color: white;
+        font-size: 40px;
+    }
+    & fa-icon {
+        color: white;
+        font-size: 40px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.showMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    width: 200px;
+    font-size: 30px;
+}

@@ -1,3 +1,4 @@
 export interface NewTransaction {
-    price: number
+    price: number,
+    description: string
 }
