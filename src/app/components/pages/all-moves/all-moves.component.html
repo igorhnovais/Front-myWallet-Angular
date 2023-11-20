@@ -1,0 +1,18 @@
+<main class="main">
+    <h3> Aqui estão todas suas movimentações</h3>
+    <div class="d-flex flex-column align-items-center justify-content-center container">
+        <div *ngIf="allTransactions.length > 0; else noTransactions">
+            <div *ngFor="let transaction of allTransactions" class="d-flex moves" routerLink="/home/{{transaction.id}}">
+                <h2 [ngStyle]="transaction.price >= 0 ? { color: 'green' } : { color: 'red' }">
+                    {{transaction.price}}
+                </h2>
+                <h2 [ngStyle]="{color:'gray'}">
+                    {{transaction.description}}
+                </h2>
+            </div>
+        </div>
+        <ng-template #noTransactions>
+            <h2>não há transações cadastradas!</h2>
+        </ng-template>
+    </div>
+</main>

@@ -31,8 +31,7 @@ export class FooterComponent {
       text: 'Todas as Movimentações',
       icon: 'list-circle',
       handler: () => {
-        console.log('Clicou em Todas as Movimentações');
-        // Adicione aqui o código a ser executado ao clicar em Todas as Movimentações
+        this.router.navigate(['/all-moves'])
       },
     },
     {

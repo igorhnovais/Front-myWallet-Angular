@@ -21,6 +21,7 @@ import { FormNewExitComponent } from './components/form-new-exit/form-new-exit.c
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IonicModule } from '@ionic/angular';
+import { AllMovesComponent } from './components/pages/all-moves/all-moves.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { IonicModule } from '@ionic/angular';
     FormNewExitComponent,
     FormSignUpComponent,
     FooterComponent,
+    AllMovesComponent,
   ],
   imports: [
     BrowserModule,
