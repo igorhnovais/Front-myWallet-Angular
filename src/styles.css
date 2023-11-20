@@ -52,26 +52,22 @@ table {
 	border-spacing: 0;
 }
 
-ion-action-sheet.my-custom-class {
-	padding: 30px;
-}
-
 ion-action-sheet.my-custom-class .action-sheet-group {
 	background: #9b1ca2f8;
 	border-radius: 20px;
 }
 
-ion-action-sheet.my-custom-class .action-sheet-title {
-	color: #fff;
+ion-action-sheet.my-custom-class .action-sheet-cancel{
+	background-color: #a21c1cf8;
 }
 
-ion-action-sheet.my-custom-class .action-sheet-cancel::after {
-	background: #9b1ca2f8;
+ion-action-sheet.my-custom-class .action-sheet-log-out{
+	color: #a21c1cf8;
 }
 
 ion-action-sheet.my-custom-class .action-sheet-button,
 ion-action-sheet.my-custom-class .action-sheet-button.ion-focused {
- 	color: #000000;
+ 	color: #ffffff;
 }
 
 @media (any-hover: hover) {
@@ -83,3 +79,11 @@ ion-action-sheet.my-custom-class .action-sheet-button:hover {
 ion-action-sheet.my-custom-class ion-backdrop {
 	opacity: 0.9;
 }
+
+ion-action-sheet.my-custom-class ion-icon{
+		color: white
+}
+
+ion-icon {
+	color: blue;
+	}

@@ -43,13 +43,19 @@ export class HomeComponent implements OnInit {
 
   }
 
-  search(e: Event): void{
+  search(e: Event): any{
     const target = e.target as HTMLInputElement;
-    const value = Number(target.value);
+    const value = Number(target.value.trim());
 
-    this.transactions = this.allTransactions.filter((transaction) => {
-      return transaction.price == value
-    });
+    if(!value){
+      return this.transactions = [...this.allTransactions];
+      
+    } else {
+      this.transactions = this.allTransactions.filter((transaction) => {
+        return transaction.price == value
+      });
+    }
+      
 
   }
 }

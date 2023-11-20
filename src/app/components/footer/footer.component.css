@@ -3,7 +3,7 @@
 .footer {
     position: fixed;
     bottom: 0;
-    background-color: blue;
+    background-color:#641585;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -19,17 +19,6 @@
     }
 }
 
-.hidden {
-    display: none;
-}
-
-.showMenu {
-    display: flex;
-    flex-direction: column;
-    background-color: aquamarine;
-    position: fixed;
-    right: 0;
-    bottom: 50px;
-    width: 200px;
-    font-size: 30px;
-}
+ion-icon {
+	color: blue;
+	}
