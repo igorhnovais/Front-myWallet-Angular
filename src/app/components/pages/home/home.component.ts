@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   allTransactions: Transaction[] = [];
+  balance: any;
   transactions: Transaction[] = [];
   baseApiUrl = environment.baseApiUrl;
   faSearch = faSearch;
@@ -37,10 +38,14 @@ export class HomeComponent implements OnInit {
     }
 
     this.transactionService.getAllTransactions(token)
-    .subscribe({next: (res) => {this.transactions = res, console.log("p", res),this.allTransactions = res}
+    .subscribe({next: (res) => {this.transactions = res.slice(0,9),this.allTransactions = res}
       
       , error: (res) => console.log("error", res)})
 
+    this.transactionService.getBalance(token)
+    .subscribe({next: (res) => {this.balance = res.balance},
+    error: (res) => console.log("error", res)
+    })
   }
 
   search(e: Event): any{
@@ -55,8 +60,6 @@ export class HomeComponent implements OnInit {
         return transaction.price == value
       });
     }
-      
-
   }
 }
 

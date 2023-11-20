@@ -10,7 +10,6 @@
                 <h2 [ngStyle]="transaction.price >= 0 ? { color: 'green' } : { color: 'red' }">
                     {{transaction.price}}
                 </h2>
-                =>
                 <h2 [ngStyle]="{color:'gray'}">
                     {{transaction.description}}
                 </h2>
@@ -19,6 +18,9 @@
         <ng-template #noTransactions>
             <h2>não há transações cadastradas!</h2>
         </ng-template>
+    </div>
+    <div class="balance">
+        <h6>R$: {{balance || 0}}</h6>
     </div>
     <app-footer></app-footer>
 </main>

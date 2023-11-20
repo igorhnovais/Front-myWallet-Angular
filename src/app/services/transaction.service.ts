@@ -26,6 +26,16 @@ export class TransactionService {
     return this.http.get<Transaction[]>(this.apiUrl, {headers})
   }
 
+  getBalance(token: string):Observable<any>{
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
+    const result = this.http.get<number>(`${this.apiUrl}/balance`, {headers})
+    console.log("ma", result)
+    return result
+  }
+
   getTransaction(id:number):Observable<Transaction>{
     const url = `${this.apiUrl}/${id}`
     return this.http.get<Transaction>(url)
