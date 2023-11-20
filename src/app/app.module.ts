@@ -22,6 +22,7 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
 import { FooterComponent } from './components/footer/footer.component';
 import { IonicModule } from '@ionic/angular';
 import { AllMovesComponent } from './components/pages/all-moves/all-moves.component';
+import { PriceFormatPipe } from './price-format.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AllMovesComponent } from './components/pages/all-moves/all-moves.compon
     FormSignUpComponent,
     FooterComponent,
     AllMovesComponent,
+    PriceFormatPipe
   ],
   imports: [
     BrowserModule,

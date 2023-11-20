@@ -2,6 +2,13 @@
     background-color: #8C11BE;
     width: 100%;
     height: 200vw;
+    & h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 30px;
+    }
 }
 
 .container {
@@ -12,10 +19,10 @@
     width: 400px;
     margin-top: 20px;
     
-    height: 400px;
+    height: 300px;
     background-color: white;
     border-radius: 10px;
-    /* border: 5px black solid; */
+    border: 5px black solid;
    
 
     width: 94%;

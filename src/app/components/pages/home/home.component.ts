@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.transactionService.getAllTransactions(token)
-    .subscribe({next: (res) => {this.transactions = res.slice(-9),this.allTransactions = res}
+    .subscribe({next: (res) => {this.transactions = res.slice(-6),this.allTransactions = res}
       
       , error: (res) => console.log("error", res)})
 

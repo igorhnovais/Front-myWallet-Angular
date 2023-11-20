@@ -4,7 +4,7 @@
         <div *ngIf="allTransactions.length > 0; else noTransactions">
             <div *ngFor="let transaction of allTransactions" class="d-flex moves" routerLink="/home/{{transaction.id}}">
                 <h2 [ngStyle]="transaction.price >= 0 ? { color: 'green' } : { color: 'red' }">
-                    {{transaction.price}}
+                    {{transaction.price | priceFormat}}
                 </h2>
                 <h2 [ngStyle]="{color:'gray'}">
                     {{transaction.description}}

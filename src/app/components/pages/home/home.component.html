@@ -4,11 +4,12 @@
             <ion-searchbar show-clear-button="always" clear-icon="trash-bin" (input)="search($event)"></ion-searchbar>
         </form>
     </div>
+    <h3> Ultimas movimentações</h3>
     <div class="d-flex flex-column align-items-center justify-content-center container">
         <div *ngIf="transactions.length > 0; else noTransactions">
             <div *ngFor="let transaction of transactions" class="d-flex moves" routerLink="/home/{{transaction.id}}">
                 <h2 [ngStyle]="transaction.price >= 0 ? { color: 'green' } : { color: 'red' }">
-                    {{transaction.price}}
+                    {{transaction.price | priceFormat}}
                 </h2>
                 <h2 [ngStyle]="{color:'gray'}">
                     {{transaction.description}}
@@ -20,7 +21,7 @@
         </ng-template>
     </div>
     <div class="balance">
-        <h6>R$: {{balance || 0}}</h6>
+        <h6>{{balance | priceFormat}}</h6>
     </div>
     <app-footer></app-footer>
 </main>
