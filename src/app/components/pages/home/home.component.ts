@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     this.transactionService.getAllTransactions(token)
     .subscribe({next: (res) => {this.transactions = res.slice(-6),this.allTransactions = res}
       
-      , error: (res) => console.log("error", res)})
+      , error: (res) =>{console.log("error", res), this.router.navigate(["/sign-in"]); } })
 
     this.transactionService.getBalance(token)
     .subscribe({next: (res) => {this.balance = res.balance},
